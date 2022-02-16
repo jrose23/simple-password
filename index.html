@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Password Gen</title>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="card">
+                    <div class="password-container">
+                        <h1>SimplePassword.xyz</h1>
+                        <div class="password-grid">
+                            <input type="text" name="password-text" class="passwordText" value="" placeholder="Create Password..." readonly />
+                            <button class="btn disabled" id="copyBtn">Copy</button>
+                        </div>
+                    </div>
+
+                    <form id="passwordForm">
+                        <h1>Number of Characters</h1>
+                        <div class="numbers-grid">
+                            <input type="radio" id="chars-8" name="number-of-chars" value="8" checked />
+                            <label for="chars-8">8</label>
+
+                            <input type="radio" id="chars-10" name="number-of-chars" value="10" />
+                            <label for="chars-10">10</label>
+
+                            <input type="radio" id="chars-12" name="number-of-chars" value="12" />
+                            <label for="chars-12">12</label>
+
+                            <input type="radio" id="chars-14" name="number-of-chars" value="14" />
+                            <label for="chars-14">14</label>
+
+                            <input type="radio" id="chars-16" name="number-of-chars" value="16" />
+                            <label for="chars-16">16</label>
+
+                            <input type="radio" id="chars-18" name="number-of-chars" value="18" />
+                            <label for="chars-18">18</label>
+                        </div>
+
+                        <h1>Character Options</h1>
+                        <div class="options-grid">
+                            <input type="checkbox" name="char-option" id="charsLowercase" value="lowercase" checked />
+                            <label for="charsLowercase">
+                                <span class="option-icon">a</span>
+                                Lowercase
+                            </label>
+
+                            <input type="checkbox" name="char-option" id="charsUppercase" value="uppercase" />
+                            <label for="charsUppercase">
+                                <span class="option-icon">A</span>
+                                Uppercase
+                            </label>
+
+                            <input type="checkbox" name="char-option" id="charsNumber" value="numbers" />
+                            <label for="charsNumber">
+                                <span class="option-icon">1</span>
+                                Numbers
+                            </label>
+
+                            <input type="checkbox" name="char-option" id="charsSymbol" value="symbols" />
+                            <label for="charsSymbol">
+                                <span class="option-icon">&</span>
+                                Symbols
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn" id="submitBtn">Create Password</button>
+                    </form>
+                </div>
+
+                <!-- Generated Password --
+                <div class="card">
+                    <div class="password-grid">
+                        <input type="text" name="password-text" class="passwordText" value="" readonly />
+                        <button class="btn" id="copyBtn">Copy</button>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+</html>
