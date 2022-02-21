@@ -38,6 +38,11 @@ body {
     justify-content: center;
 }
 
+::selection {
+    background-color: var(--color-primary-lt);
+    color: var(--color-secondary);
+}
+
 .container {
     width: 100%;
     max-width: 41.25rem;
@@ -47,12 +52,10 @@ body {
 
 .card {
     width: 100%;
-    /* padding: 1.875rem; */
     background-color: var(--color-white);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     overflow: hidden;
-    /* margin-bottom: 1.875rem; */
 }
 
 .card h1 {
@@ -108,7 +111,6 @@ input[type='checkbox'] {
 }
 
 .numbers-grid label {
-    /* font-size: 1.5rem; */
     font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem);
     color: var(--color-secondary);
 }
@@ -207,7 +209,6 @@ input[type='checkbox'] {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.625rem;
-    /* margin-bottom: 1.875rem; */
 }
 
 .password-grid input[type='text'] {
@@ -273,25 +274,23 @@ input[type='checkbox'] {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 100%;
     font-family: var(--font-primary);
     font-weight: var(--fw-med);
-    border-radius: 5px;
+    font-size: 1rem;
     padding: 0.75rem;
-    margin-top: 0.625rem;
     animation-name: show-alert;
     animation-timing-function: cubic-bezier(0.7, -0.07, 0.27, 1.32);
     animation-duration: 0.5s;
 }
 
 .alert.alert-warning {
-    border: 2px solid #f73145;
     background-color: #ffdee2;
-    color: #f73145;
+    color: #ba0618;
 }
 
 .alert.alert-success {
-    border: 2px solid var(--color-primary);
     background-color: var(--color-primary-lt);
     color: var(--color-secondary);
 }
@@ -300,7 +299,7 @@ input[type='checkbox'] {
     0% {
         opacity: 0;
         transform: scale(0.5);
-        transform: translateY(50%);
+        transform: translateY(80%);
     }
 
     100% {
