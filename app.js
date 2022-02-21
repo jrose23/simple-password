@@ -38,7 +38,7 @@ function getFormData(e) {
 
         generatePassword(length, characters);
     } else {
-        console.log('Please select one or more character options');
+        showAlert('warning', 'Please select one or more character options...');
     }
 
     e.preventDefault();
@@ -65,5 +65,24 @@ function showPassword(password) {
 }
 
 function copyPassword() {
-    console.log('copied!');
+    showAlert('success', 'Password copied!');
+}
+
+function showAlert(alertType, message) {
+    const passwordContainer = document.querySelector('.password-container');
+    const alert = document.createElement('div');
+
+    if (alertType === 'warning') {
+        alert.className = 'alert alert-warning';
+    } else {
+        alert.className = 'alert alert-success';
+    }
+
+    alert.innerText = message;
+
+    passwordContainer.appendChild(alert);
+
+    setTimeout(() => {
+        alert.remove();
+    }, 4000);
 }

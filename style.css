@@ -74,7 +74,7 @@ input[type='checkbox'] {
 .numbers-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
+    gap: 0.625rem;
     margin-bottom: 1.875rem;
 }
 
@@ -96,7 +96,7 @@ input[type='checkbox'] {
     border-radius: 5px;
     background-color: var(--color-primary-lt);
     color: var(--color-primary);
-    padding: 15px;
+    padding: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -124,10 +124,14 @@ input[type='checkbox'] {
     color: var(--color-white);
 }
 
+.options-grid input[type='checkbox']:checked + label > span {
+    color: var(--color-secondary);
+}
+
 .options-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 0.625rem;
     margin-bottom: 1.875rem;
 }
 
@@ -202,7 +206,7 @@ input[type='checkbox'] {
 .password-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
+    gap: 0.625rem;
     /* margin-bottom: 1.875rem; */
 }
 
@@ -257,11 +261,52 @@ input[type='checkbox'] {
     25% {
         border: 2px solid var(--color-primary);
         box-shadow: var(--box-shadow);
-        transform: translateY(-10%);
         transform: scale(1.025);
     }
 
     100% {
         border: 2px solid var(--color-gray);
+    }
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: var(--font-primary);
+    font-weight: var(--fw-med);
+    border-radius: 5px;
+    padding: 0.75rem;
+    margin-top: 0.625rem;
+    animation-name: show-alert;
+    animation-timing-function: cubic-bezier(0.7, -0.07, 0.27, 1.32);
+    animation-duration: 0.5s;
+}
+
+.alert.alert-warning {
+    border: 2px solid #f73145;
+    background-color: #ffdee2;
+    color: #f73145;
+}
+
+.alert.alert-success {
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-primary-lt);
+    color: var(--color-secondary);
+}
+
+@keyframes show-alert {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform: scale(1.025);
+        transform: translateY(0%);
     }
 }
